@@ -1,763 +1,1677 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sambel Bakar Ziizee Sukaraja Bogor - Rasakan Pedasnya Cinta dalam Setiap Suapan!</title>
-    <meta name="description" content="Sambel Bakar Ziizee Sukaraja Bogor - Restoran sambel bakar terbaik di Sukaraja Bogor. Menu ayam kampung, ikan gurame, bebek, dan seafood dengan sambel pedas khas. Buka 11.00-23.00 WIB. Pesan sekarang!">
-    <meta name="keywords" content="sambel bakar sukaraja, sambel bakar gunung gulis, restoran sukaraja, makanan pedas bogor, ayam bakar sukaraja, ikan bakar bogor, sambel terasi, kuliner bogor">
-    <meta name="author" content="Sambel Bakar Ziizee">
-    <meta property="og:title" content="Sambel Bakar Ziizee Bogor - Rasakan Pedasnya Cinta!">
-    <meta property="og:description" content="Restoran sambel bakar terbaik di Bogor dengan menu ayam kampung, ikan gurame, bebek, dan seafood. Sambel pedas khas yang bikin nagih!">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="id_ID">
-    <meta name="robots" content="index, follow">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="canonical" href="https://sambelbakarziizee.com">
+    <title>Sambel Bakar Ziizee - Sensasi Pedasnya Bikin Nagih!</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; }
         
-        body {
-            font-family: 'Poppins', sans-serif;
+        .hero-bg {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23dc2626" width="1200" height="800"/><circle fill="%23991b1b" cx="200" cy="200" r="100" opacity="0.3"/><circle fill="%23b91c1c" cx="800" cy="400" r="150" opacity="0.2"/><circle fill="%23ef4444" cx="1000" cy="600" r="80" opacity="0.4"/></svg>');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
         }
         
-        .fire-animation {
-            animation: fire 2s ease-in-out infinite alternate;
+        /* Floating Elements Animation */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
         }
         
-        @keyframes fire {
-            0% { transform: scale(1) rotate(-1deg); }
-            100% { transform: scale(1.05) rotate(1deg); }
+        .floating-chili {
+            position: absolute;
+            font-size: 2rem;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.7;
         }
         
-        .spicy-gradient {
-            background: linear-gradient(135deg, #ff4444, #ff6b35, #ff8c42);
+        .floating-chili:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+        .floating-chili:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+        .floating-chili:nth-child(3) { top: 40%; left: 20%; animation-delay: 4s; }
+        .floating-chili:nth-child(4) { top: 80%; left: 60%; animation-delay: 1s; }
+        .floating-chili:nth-child(5) { top: 10%; left: 70%; animation-delay: 3s; }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(5deg); }
+            50% { transform: translateY(-40px) rotate(-5deg); }
+            75% { transform: translateY(-20px) rotate(3deg); }
         }
         
-        .cart-bounce {
-            animation: bounce 0.5s ease-in-out;
+        /* Bouncing Text Animation */
+        .bouncing-text {
+            animation: bounce 2s ease-in-out infinite;
         }
         
         @keyframes bounce {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
         }
         
-        .fade-in {
-            animation: fadeIn 0.6s ease-in-out;
+        /* Rotating Elements */
+        .rotating-element {
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Sliding Text */
+        .sliding-text {
+            animation: slideIn 1s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateX(-100px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        
+        /* Pulsing Elements */
+        .pulsing-element {
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(239, 68, 68, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(239, 68, 68, 0.8); }
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .menu-card {
+            transition: all 0.3s ease;
+            background: linear-gradient(145deg, #ffffff, #f8f9fa);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .menu-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .floating-whatsapp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .smoke-animation {
+            animation: smoke 3s ease-in-out infinite;
+        }
+        
+        @keyframes smoke {
+            0%, 100% { opacity: 0.7; transform: translateY(0px) rotate(0deg); }
+            50% { opacity: 1; transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .gallery-item {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05) rotate(1deg);
+        }
+        
+        .navbar-scroll {
+            transition: all 0.3s ease;
+        }
+        
+        .ssl-badge {
+            display: inline-flex;
+            align-items: center;
+            background: #10b981;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        
+        /* Music Control */
+        .music-control {
+            position: fixed;
+            top: 100px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(0,0,0,0.8);
+            border-radius: 50px;
+            padding: 10px;
+        }
+        
+        /* Order Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 80vh;
+            overflow-y: auto;
+            animation: slideUp 0.3s ease;
         }
         
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .quantity-btn {
+            background: #ef4444;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .quantity-btn:hover {
+            background: #dc2626;
         }
     </style>
 </head>
 <body class="bg-black text-white">
-    <!-- Language Toggle -->
-    <div class="fixed top-4 right-4 z-50">
-        <button onclick="toggleLanguage()" class="bg-red-600 hover:bg-red-700 px-3 py-1 rounded-full text-sm font-semibold transition-all">
-            <span id="langToggle">🇬🇧 EN</span>
-        </button>
-    </div>
-
     <!-- Navigation -->
-    <nav class="fixed top-0 left-0 right-0 bg-black/90 backdrop-blur-sm z-40 border-b border-red-600/30">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl">🌶️</span>
-                <h1 class="text-xl font-bold text-red-500">Sambel Bakar Ziizee</h1>
+    <nav class="navbar-scroll fixed w-full top-0 z-50 bg-black bg-opacity-90 backdrop-blur-md">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <div class="text-3xl">🌶️🔥</div>
+                    <div>
+                        <h1 class="text-xl font-bold text-red-500">Sambel Bakar Ziizee</h1>
+                        <p class="text-xs text-gray-300">Sensasi Pedas Bikin Nagih</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-white hover:text-red-500 transition font-medium">Beranda</a>
+                    <a href="#about" class="text-white hover:text-red-500 transition font-medium">Tentang</a>
+                    <a href="#menu" class="text-white hover:text-red-500 transition font-medium">Menu</a>
+                    <a href="#gallery" class="text-white hover:text-red-500 transition font-medium">Galeri</a>
+                    <a href="#contact" class="text-white hover:text-red-500 transition font-medium">Kontak</a>
+                </div>
+                <div class="ssl-badge">
+                    <i class="fas fa-lock mr-1"></i>
+                    SSL Secured
+                </div>
             </div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#home" class="hover:text-red-400 transition-colors" data-id="nav-home">Beranda</a>
-                <a href="#menu" class="hover:text-red-400 transition-colors" data-id="nav-menu">Menu</a>
-                <a href="#testimonials" class="hover:text-red-400 transition-colors" data-id="nav-testimonials">Testimoni</a>
-                <a href="#contact" class="hover:text-red-400 transition-colors" data-id="nav-contact">Kontak</a>
-            </div>
-            <button onclick="toggleCart()" class="relative bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg transition-all">
-                <i class="fas fa-shopping-cart"></i>
-                <span id="cartCount" class="absolute -top-2 -right-2 bg-orange-500 text-xs rounded-full w-5 h-5 flex items-center justify-center">0</span>
-            </button>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
-        <div class="absolute inset-0 spicy-gradient opacity-20"></div>
+    <section id="home" class="hero-bg min-h-screen flex items-center">
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-chili">🌶️</div>
+            <div class="floating-chili">🔥</div>
+            <div class="floating-chili">🌶️</div>
+            <div class="floating-chili">💨</div>
+            <div class="floating-chili">🔥</div>
+        </div>
+        
         <div class="container mx-auto px-4 text-center relative z-10">
-            <div class="fire-animation mb-8">
-                <div class="text-8xl mb-4">🔥🌶️🔥</div>
-            </div>
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text spicy-gradient" data-id="hero-title">
-                Rasakan Pedasnya Cinta dalam Setiap Suapan!
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 text-gray-300" data-id="hero-subtitle">
-                Pesan sekarang, dijamin nagih!
+            <div class="smoke-animation text-8xl mb-6 rotating-element">🌶️💨</div>
+            <h2 class="text-6xl font-bold mb-4 text-white bouncing-text">Sambel Bakar Ziizee</h2>
+            <p class="text-2xl mb-2 text-red-400 font-semibold sliding-text">Sensasi Pedasnya Bikin Nagih!</p>
+            <p class="text-lg mb-8 max-w-3xl mx-auto text-gray-200 sliding-text">
+                Nikmati pengalaman kuliner pedas yang tak terlupakan di café elegan kami. 
+                Sambel bakar premium dengan cita rasa autentik yang memanjakan lidah Anda.
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <button onclick="scrollToMenu()" class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105" data-id="btn-menu">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="scrollToSection('menu')" class="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 shadow-lg pulsing-element">
                     <i class="fas fa-utensils mr-2"></i>Lihat Menu
                 </button>
-                <button onclick="orderWhatsApp()" class="bg-green-600 hover:bg-green-700 px-8 py-4 rounded-lg text-lg font-semibold transition-all transform hover:scale-105" data-id="btn-whatsapp">
-                    <i class="fab fa-whatsapp mr-2"></i>Pesan via WhatsApp
+                <button onclick="openOrderModal()" class="glass-effect text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition pulsing-element">
+                    <i class="fas fa-shopping-cart mr-2"></i>Pesan Online
+                </button>
+                <button onclick="orderWhatsApp()" class="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-full font-semibold transition transform hover:scale-105 shadow-lg">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- Promo Banner -->
-    <section class="bg-gradient-to-r from-red-600 to-orange-600 py-6">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="mb-4 md:mb-0">
-                    <h3 class="text-2xl font-bold mb-2" data-id="promo-title">🎉 PROMO AKHIR PEKAN! 🎉</h3>
-                    <p class="text-lg" data-id="promo-desc">Diskon 20% untuk semua menu sambel bakar!</p>
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-4xl font-bold text-white mb-6">Tentang Sambel Bakar Ziizee</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed text-lg">
+                        Sambel Bakar Ziizee hadir sebagai destinasi kuliner pedas premium dengan konsep café modern yang elegan. 
+                        Kami menghadirkan pengalaman makan yang tak hanya memanjakan lidah, tapi juga mata dan hati.
+                    </p>
+                    <p class="text-gray-300 mb-8 leading-relaxed text-lg">
+                        Dengan resep rahasia turun temurun dan teknik pembakaran khusus, setiap sajian sambel bakar kami 
+                        menghadirkan aroma smoky yang menggoda dan rasa pedas yang bikin nagih.
+                    </p>
+                    <div class="grid grid-cols-3 gap-4">
+                        <div class="text-center p-4 bg-red-900 bg-opacity-30 rounded-lg">
+                            <div class="text-2xl font-bold text-red-400">100%</div>
+                            <div class="text-sm text-gray-300">Halal</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-900 bg-opacity-30 rounded-lg">
+                            <div class="text-2xl font-bold text-red-400">5★</div>
+                            <div class="text-sm text-gray-300">Rating</div>
+                        </div>
+                        <div class="text-center p-4 bg-red-900 bg-opacity-30 rounded-lg">
+                            <div class="text-2xl font-bold text-red-400">24/7</div>
+                            <div class="text-sm text-gray-300">Delivery</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="text-center">
-                    <p class="text-sm mb-2" data-id="promo-timer">Berakhir dalam:</p>
-                    <div id="countdown" class="text-2xl font-bold">02:23:45:12</div>
+                    <div class="bg-gradient-to-br from-red-900 to-black rounded-3xl p-8 shadow-2xl">
+                        <div class="text-8xl mb-4">👨‍🍳</div>
+                        <h4 class="text-2xl font-bold text-white mb-2">Chef Ziizee</h4>
+                        <p class="text-gray-300 mb-4">Master of Spicy Cuisine</p>
+                        <p class="text-gray-400 text-sm">
+                            "Setiap sajian adalah karya seni yang menggabungkan tradisi dan inovasi"
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Menu Section -->
-    <section id="menu" class="py-20 bg-gray-900">
+    <section id="menu" class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-8 text-red-500" data-id="menu-title">Menu Pilihan</h2>
-            
-            <!-- Menu Category Filter -->
-            <div class="flex flex-wrap justify-center gap-3 mb-12">
-                <button onclick="filterMenu('all')" class="filter-btn active bg-red-600 hover:bg-red-700 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-all">
-                    Semua Menu
-                </button>
-                <button onclick="filterMenu('Ayam')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-chicken">
-                    Ayam
-                </button>
-                <button onclick="filterMenu('Ikan')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-fish">
-                    Ikan
-                </button>
-                <button onclick="filterMenu('Bebek')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-duck">
-                    Bebek
-                </button>
-                <button onclick="filterMenu('Seafood')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-seafood">
-                    Seafood
-                </button>
-                <button onclick="filterMenu('Vegetarian')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-vegetarian">
-                    Vegetarian
-                </button>
-                <button onclick="filterMenu('Paket')" class="filter-btn bg-gray-700 hover:bg-gray-600 px-6 py-2 rounded-full font-semibold transition-all" data-id="filter-package">
-                    Paket
-                </button>
+            <div class="text-center mb-16">
+                <h3 class="text-5xl font-bold text-white mb-4">Menu Spesial</h3>
+                <p class="text-gray-400 text-xl max-w-2xl mx-auto">Pilihan menu terbaik dengan cita rasa yang memukau</p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="menuGrid">
-                <!-- Menu items will be populated by JavaScript -->
+            <!-- Menu Categories -->
+            <div class="mb-12">
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button onclick="showCategory('all')" class="category-btn bg-red-600 text-white px-6 py-2 rounded-full font-semibold hover:bg-red-700 transition">
+                        Semua Menu
+                    </button>
+                    <button onclick="showCategory('main')" class="category-btn bg-gray-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-600 transition">
+                        Makanan Utama
+                    </button>
+                    <button onclick="showCategory('side')" class="category-btn bg-gray-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-600 transition">
+                        Lauk & Sayur
+                    </button>
+                    <button onclick="showCategory('drink')" class="category-btn bg-gray-700 text-white px-6 py-2 rounded-full font-semibold hover:bg-gray-600 transition">
+                        Minuman
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="menu-container">
+                <!-- Bebek Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-yellow-600 to-orange-700 flex items-center justify-center">
+                        <div class="text-5xl">🦆</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Bebek Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Bebek goreng crispy dengan bumbu rempah khas</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 31.000</span>
+                        </div>
+                        <button onclick="addToCart('Bebek Goreng', 31000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Gurame Bakar -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-blue-500 to-green-600 flex items-center justify-center">
+                        <div class="text-5xl">🐟</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Gurame Bakar</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Ikan gurame segar dibakar dengan bumbu spesial</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 45.000</span>
+                        </div>
+                        <button onclick="orderItem('Gurame Bakar', 45000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ayam Bakar -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-5xl">🍗</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Ayam Bakar</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Ayam bakar dengan bumbu kecap manis yang menggoda</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 32.000</span>
+                        </div>
+                        <button onclick="orderItem('Ayam Bakar', 32000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Ayam Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                        <div class="text-5xl">🍖</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Ayam Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Ayam goreng crispy dengan bumbu meresap sempurna</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 26.000</span>
+                        </div>
+                        <button onclick="orderItem('Ayam Goreng', 26000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sate Ayam -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-yellow-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-5xl">🍢</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Sate Ayam</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Sate ayam dengan bumbu kacang yang gurih</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 25.000</span>
+                        </div>
+                        <button onclick="orderItem('Sate Ayam', 25000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kulit Ayam -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-amber-500 to-orange-600 flex items-center justify-center">
+                        <div class="text-5xl">🥓</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Kulit Ayam</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Kulit ayam crispy yang renyah dan gurih</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 25.000</span>
+                        </div>
+                        <button onclick="orderItem('Kulit Ayam', 25000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Cumi -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <div class="text-5xl">🦑</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Cumi</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Cumi segar dengan bumbu pedas yang menggigit</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 25.000</span>
+                        </div>
+                        <button onclick="orderItem('Cumi', 25000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nila Bakar -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-teal-500 to-blue-600 flex items-center justify-center">
+                        <div class="text-5xl">🐠</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Nila Bakar</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Ikan nila bakar dengan bumbu khas yang lezat</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 31.000</span>
+                        </div>
+                        <button onclick="orderItem('Nila Bakar', 31000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mie Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-yellow-600 to-red-600 flex items-center justify-center">
+                        <div class="text-5xl">🍜</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Mie Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Mie goreng spesial dengan bumbu yang meresap</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 18.000</span>
+                        </div>
+                        <button onclick="orderItem('Mie Goreng', 18000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Nasi Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="main">
+                    <div class="h-40 bg-gradient-to-br from-orange-600 to-red-600 flex items-center justify-center">
+                        <div class="text-5xl">🍛</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Nasi Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Nasi goreng dengan bumbu kecap yang nikmat</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 18.000</span>
+                        </div>
+                        <button onclick="orderItem('Nasi Goreng', 18000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tumis Kangkung -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-green-500 to-green-700 flex items-center justify-center">
+                        <div class="text-5xl">🥬</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Tumis Kangkung</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Kangkung segar ditumis dengan bumbu pedas</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 12.000</span>
+                        </div>
+                        <button onclick="orderItem('Tumis Kangkung', 12000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tumis Toge -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-lime-500 to-green-600 flex items-center justify-center">
+                        <div class="text-5xl">🌱</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Tumis Toge</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Tauge crispy dengan bumbu yang segar</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 12.000</span>
+                        </div>
+                        <button onclick="orderItem('Tumis Toge', 12000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tahu -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-yellow-400 to-yellow-600 flex items-center justify-center">
+                        <div class="text-5xl">🧈</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Tahu</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Tahu goreng crispy yang gurih</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 2.500</span>
+                        </div>
+                        <button onclick="orderItem('Tahu', 2500)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tempe -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center">
+                        <div class="text-5xl">🟫</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Tempe</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Tempe goreng dengan bumbu yang meresap</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 2.500</span>
+                        </div>
+                        <button onclick="orderItem('Tempe', 2500)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kol Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
+                        <div class="text-5xl">🥗</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Kol Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Kol segar digoreng dengan bumbu sederhana</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 5.000</span>
+                        </div>
+                        <button onclick="orderItem('Kol Goreng', 5000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Terong Goreng -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-purple-400 to-purple-600 flex items-center justify-center">
+                        <div class="text-5xl">🍆</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Terong Goreng</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Terong goreng dengan bumbu yang lezat</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 5.000</span>
+                        </div>
+                        <button onclick="orderItem('Terong Goreng', 5000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sambel Bawang -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-red-500 to-red-700 flex items-center justify-center">
+                        <div class="text-5xl">🧅🌶️</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Sambel Bawang</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Sambel bawang pedas yang menggugah selera</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 5.000</span>
+                        </div>
+                        <button onclick="orderItem('Sambel Bawang', 5000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Sambel Ijo -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="side">
+                    <div class="h-40 bg-gradient-to-br from-green-600 to-red-600 flex items-center justify-center">
+                        <div class="text-5xl">🌶️💚</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Sambel Ijo</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Sambel hijau segar dengan rasa pedas yang unik</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 5.000</span>
+                        </div>
+                        <button onclick="orderItem('Sambel Ijo', 5000)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Air Mineral -->
+                <div class="menu-card rounded-2xl overflow-hidden" data-category="drink">
+                    <div class="h-40 bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center">
+                        <div class="text-5xl">💧</div>
+                    </div>
+                    <div class="p-4 bg-white text-black">
+                        <h4 class="text-lg font-bold mb-2">Air Mineral</h4>
+                        <p class="text-gray-600 mb-3 text-sm">Air mineral segar untuk menemani makanan</p>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-xl font-bold text-red-600">Rp 500</span>
+                        </div>
+                        <button onclick="orderItem('Air Mineral', 500)" class="w-full bg-red-600 text-white py-2 rounded-lg hover:bg-red-700 transition font-semibold text-sm">
+                            <i class="fas fa-cart-plus mr-1"></i>Order
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20 bg-black">
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-gray-900">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-red-500" data-id="testimonials-title">Testimoni Pelanggan</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-xl font-bold">A</div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold">Andi Pratama</h4>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+            <div class="text-center mb-16">
+                <h3 class="text-5xl font-bold text-white mb-4">Galeri</h3>
+                <p class="text-gray-400 text-xl">Lihat kelezatan yang menanti Anda</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Foto Exterior Warung -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-red-500 to-orange-600 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background warung -->
+                            <rect width="400" height="300" fill="#8B4513"/>
+                            <!-- Atap -->
+                            <polygon points="50,80 350,80 200,20" fill="#654321"/>
+                            <!-- Dinding -->
+                            <rect x="50" y="80" width="300" height="180" fill="#D2691E"/>
+                            <!-- Pintu -->
+                            <rect x="180" y="150" width="40" height="110" fill="#8B4513"/>
+                            <!-- Jendela -->
+                            <rect x="100" y="120" width="50" height="40" fill="#87CEEB"/>
+                            <rect x="250" y="120" width="50" height="40" fill="#87CEEB"/>
+                            <!-- Signboard -->
+                            <rect x="80" y="90" width="240" height="25" fill="#FF4500"/>
+                            <text x="200" y="107" text-anchor="middle" fill="white" font-size="12" font-weight="bold">SAMBEL BAKAR ZIIZEE</text>
+                            <!-- Tanaman -->
+                            <circle cx="70" cy="240" r="15" fill="#228B22"/>
+                            <circle cx="330" cy="240" r="15" fill="#228B22"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Tampak Depan Warung</p>
+                            <p class="text-sm opacity-80">Gunung Geulis, Sukaraja</p>
                         </div>
                     </div>
-                    <p class="text-gray-300" data-id="testimonial-1">"Sambel bakarnya juara banget! Pedasnya pas, nagih terus. Pelayanan juga cepat!"</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-xl font-bold">S</div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold">Sari Dewi</h4>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+
+                <!-- Foto Interior -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-yellow-500 to-red-600 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Lantai -->
+                            <rect width="400" height="300" fill="#DEB887"/>
+                            <!-- Meja-meja -->
+                            <rect x="50" y="150" width="80" height="50" fill="#8B4513"/>
+                            <rect x="200" y="150" width="80" height="50" fill="#8B4513"/>
+                            <rect x="320" y="150" width="60" height="40" fill="#8B4513"/>
+                            <!-- Kursi -->
+                            <rect x="40" y="140" width="20" height="30" fill="#654321"/>
+                            <rect x="140" y="140" width="20" height="30" fill="#654321"/>
+                            <rect x="190" y="140" width="20" height="30" fill="#654321"/>
+                            <rect x="290" y="140" width="20" height="30" fill="#654321"/>
+                            <!-- Dinding dengan hiasan -->
+                            <rect x="0" y="0" width="400" height="100" fill="#F5DEB3"/>
+                            <!-- Lampu -->
+                            <circle cx="100" cy="50" r="15" fill="#FFD700"/>
+                            <circle cx="200" cy="50" r="15" fill="#FFD700"/>
+                            <circle cx="300" cy="50" r="15" fill="#FFD700"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Interior Café</p>
+                            <p class="text-sm opacity-80">Suasana nyaman & bersih</p>
                         </div>
                     </div>
-                    <p class="text-gray-300" data-id="testimonial-2">"Harga terjangkau tapi rasa premium! Sambel bakar ayamnya recommended banget."</p>
                 </div>
-                <div class="bg-gray-800 p-6 rounded-lg">
-                    <div class="flex items-center mb-4">
-                        <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center text-xl font-bold">B</div>
-                        <div class="ml-4">
-                            <h4 class="font-semibold">Budi Santoso</h4>
-                            <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+
+                <!-- Foto Dapur -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-orange-500 to-red-700 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background dapur -->
+                            <rect width="400" height="300" fill="#2F4F4F"/>
+                            <!-- Kompor -->
+                            <rect x="50" y="180" width="100" height="60" fill="#696969"/>
+                            <circle cx="75" cy="200" r="8" fill="#FF4500"/>
+                            <circle cx="125" cy="200" r="8" fill="#FF4500"/>
+                            <!-- Wajan -->
+                            <ellipse cx="100" cy="200" rx="25" ry="8" fill="#000"/>
+                            <!-- Api -->
+                            <path d="M75,210 Q80,205 85,210 Q90,205 95,210" stroke="#FF6347" stroke-width="2" fill="none"/>
+                            <!-- Asap -->
+                            <path d="M100,190 Q105,180 110,190 Q115,180 120,190" stroke="#D3D3D3" stroke-width="2" fill="none" opacity="0.7"/>
+                            <!-- Peralatan -->
+                            <rect x="200" y="150" width="150" height="100" fill="#8B4513"/>
+                            <rect x="220" y="170" width="20" height="60" fill="#C0C0C0"/>
+                            <rect x="260" y="170" width="20" height="60" fill="#C0C0C0"/>
+                            <!-- Chef -->
+                            <circle cx="300" cy="120" r="20" fill="#FDBCB4"/>
+                            <rect x="280" y="140" width="40" height="60" fill="#FFFFFF"/>
+                            <rect x="290" y="130" width="20" height="10" fill="#FF0000"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Dapur Bersih</p>
+                            <p class="text-sm opacity-80">Proses memasak higienis</p>
                         </div>
                     </div>
-                    <p class="text-gray-300" data-id="testimonial-3">"Sudah langganan 6 bulan, selalu puas! Sambel bakar ikannya mantap."</p>
+                </div>
+
+                <!-- Foto Makanan Signature -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-red-600 to-yellow-500 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Piring -->
+                            <ellipse cx="200" cy="200" rx="120" ry="80" fill="#FFFFFF"/>
+                            <ellipse cx="200" cy="200" rx="110" ry="70" fill="#F5F5F5"/>
+                            <!-- Nasi -->
+                            <ellipse cx="150" cy="180" rx="40" ry="25" fill="#FFFAF0"/>
+                            <!-- Ayam bakar -->
+                            <ellipse cx="220" cy="160" rx="35" ry="20" fill="#8B4513"/>
+                            <!-- Sambel -->
+                            <ellipse cx="250" cy="200" rx="25" ry="15" fill="#DC143C"/>
+                            <!-- Lalapan -->
+                            <ellipse cx="180" cy="220" rx="20" ry="10" fill="#228B22"/>
+                            <ellipse cx="220" cy="230" rx="15" ry="8" fill="#32CD32"/>
+                            <!-- Garnish -->
+                            <circle cx="160" cy="160" r="3" fill="#FF6347"/>
+                            <circle cx="240" cy="180" r="3" fill="#FF6347"/>
+                            <!-- Steam effect -->
+                            <path d="M200,140 Q205,130 210,140 Q215,130 220,140" stroke="#D3D3D3" stroke-width="1" fill="none" opacity="0.6"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Sambel Bakar Spesial</p>
+                            <p class="text-sm opacity-80">Signature dish kami</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Pelanggan -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-green-500 to-blue-600 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background -->
+                            <rect width="400" height="300" fill="#87CEEB"/>
+                            <!-- Meja -->
+                            <rect x="100" y="200" width="200" height="80" fill="#8B4513"/>
+                            <!-- Orang 1 -->
+                            <circle cx="150" cy="120" r="25" fill="#FDBCB4"/>
+                            <rect x="125" y="145" width="50" height="70" fill="#4169E1"/>
+                            <!-- Orang 2 -->
+                            <circle cx="250" cy="120" r="25" fill="#FDBCB4"/>
+                            <rect x="225" y="145" width="50" height="70" fill="#FF69B4"/>
+                            <!-- Makanan di meja -->
+                            <ellipse cx="180" cy="220" rx="20" ry="10" fill="#FFFFFF"/>
+                            <ellipse cx="220" cy="220" rx="20" ry="10" fill="#FFFFFF"/>
+                            <!-- Smile -->
+                            <path d="M140,115 Q150,125 160,115" stroke="#000" stroke-width="2" fill="none"/>
+                            <path d="M240,115 Q250,125 260,115" stroke="#000" stroke-width="2" fill="none"/>
+                            <circle cx="145" cy="110" r="2" fill="#000"/>
+                            <circle cx="155" cy="110" r="2" fill="#000"/>
+                            <circle cx="245" cy="110" r="2" fill="#000"/>
+                            <circle cx="255" cy="110" r="2" fill="#000"/>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Pelanggan Puas</p>
+                            <p class="text-sm opacity-80">Testimoni nyata</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Foto Promo -->
+                <div class="gallery-item rounded-2xl overflow-hidden relative group">
+                    <div class="h-64 bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center relative">
+                        <svg class="w-full h-full absolute inset-0" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Background promo -->
+                            <rect width="400" height="300" fill="#FF1493"/>
+                            <!-- Banner -->
+                            <rect x="50" y="100" width="300" height="100" fill="#FFD700" rx="10"/>
+                            <!-- Text area -->
+                            <rect x="70" y="120" width="260" height="60" fill="#FFFFFF" rx="5"/>
+                            <!-- Decorative elements -->
+                            <circle cx="100" cy="80" r="15" fill="#FF6347"/>
+                            <circle cx="300" cy="80" r="15" fill="#FF6347"/>
+                            <circle cx="100" cy="220" r="15" fill="#FF6347"/>
+                            <circle cx="300" cy="220" r="15" fill="#FF6347"/>
+                            <!-- Stars -->
+                            <text x="120" y="145" fill="#FF1493" font-size="16" font-weight="bold">⭐ PROMO ⭐</text>
+                            <text x="140" y="165" fill="#000" font-size="12">Diskon 20%</text>
+                        </svg>
+                        <div class="absolute inset-0 bg-black bg-opacity-40 group-hover:bg-opacity-20 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <p class="font-semibold">Promo Spesial</p>
+                            <p class="text-sm opacity-80">Update terbaru</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact & Location -->
-    <section id="contact" class="py-20 bg-gray-900">
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl font-bold text-center mb-12 text-red-500" data-id="contact-title">Kontak & Lokasi</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6" data-id="contact-info">Informasi Kontak</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center">
-                            <i class="fas fa-map-marker-alt text-red-500 w-6"></i>
-                            <div class="ml-3">
-                                <span data-id="address">Jl. Raya Sukaraja No. 123, Sukaraja, Bogor</span>
-                                <br>
-                                <button onclick="openGoogleMaps()" class="text-red-400 hover:text-red-300 text-sm mt-1 underline">
-                                    <i class="fas fa-external-link-alt mr-1"></i>Lihat di Google Maps
+            <div class="text-center mb-16">
+                <h3 class="text-5xl font-bold text-white mb-4">Kontak & Lokasi</h3>
+                <p class="text-gray-400 text-xl">Hubungi kami untuk reservasi dan pemesanan</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center p-8 bg-gradient-to-br from-green-900 to-green-700 rounded-2xl">
+                    <div class="text-4xl mb-4">📱</div>
+                    <h4 class="font-bold text-white mb-2">WhatsApp</h4>
+                    <p class="text-green-200 mb-4">0857-8208-9892</p>
+                    <button onclick="callWhatsApp()" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition">
+                        <i class="fab fa-whatsapp mr-2"></i>Chat Sekarang
+                    </button>
+                </div>
+                
+                <div class="text-center p-8 bg-gradient-to-br from-pink-900 to-pink-700 rounded-2xl">
+                    <div class="text-4xl mb-4">📷</div>
+                    <h4 class="font-bold text-white mb-2">Instagram</h4>
+                    <p class="text-pink-200 mb-4">@sambelbakarziizee</p>
+                    <button onclick="openInstagram()" class="bg-pink-500 text-white px-6 py-2 rounded-lg hover:bg-pink-600 transition">
+                        <i class="fab fa-instagram mr-2"></i>Follow Us
+                    </button>
+                </div>
+                
+                <div class="text-center p-8 bg-gradient-to-br from-gray-900 to-gray-700 rounded-2xl">
+                    <div class="text-4xl mb-4">🎵</div>
+                    <h4 class="font-bold text-white mb-2">TikTok</h4>
+                    <p class="text-gray-200 mb-4">@sambelbakarziizee</p>
+                    <button onclick="openTikTok()" class="bg-gray-600 text-white px-6 py-2 rounded-lg hover:bg-gray-500 transition">
+                        <i class="fab fa-tiktok mr-2"></i>Watch Videos
+                    </button>
+                </div>
+                
+                <div class="text-center p-8 bg-gradient-to-br from-blue-900 to-blue-700 rounded-2xl">
+                    <div class="text-4xl mb-4">📍</div>
+                    <h4 class="font-bold text-white mb-2">Lokasi</h4>
+                    <p class="text-blue-200 mb-4">Gunung Geulis, Sukaraja<br>Kabupaten Bogor, Jawa Barat</p>
+                    <button onclick="openMaps()" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600 transition">
+                        <i class="fas fa-map-marker-alt mr-2"></i>Lihat Maps
+                    </button>
+                </div>
+            </div>
+
+            <!-- Interactive Map Section -->
+            <div class="mt-16">
+                <h4 class="text-3xl font-bold text-white mb-8 text-center">Lokasi Kami</h4>
+                <div class="grid lg:grid-cols-2 gap-8">
+                    <!-- Map -->
+                    <div class="bg-gray-800 rounded-2xl overflow-hidden">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.2!2d106.8!3d-6.6!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMzYnMDAuMCJTIDEwNsKwNDgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1640000000000!5m2!1sen!2sid"
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade"
+                            class="rounded-2xl">
+                        </iframe>
+                    </div>
+                    
+                    <!-- Location Info & Reviews -->
+                    <div class="space-y-6">
+                        <div class="bg-gray-800 p-6 rounded-2xl">
+                            <h5 class="text-xl font-bold text-white mb-4">📍 Alamat Lengkap</h5>
+                            <p class="text-gray-300 mb-4">
+                                <strong>Sambel Bakar Ziizee</strong><br>
+                                Gunung Geulis, Sukaraja<br>
+                                Kabupaten Bogor, Jawa Barat 16710<br>
+                                Indonesia
+                            </p>
+                            <div class="flex space-x-4">
+                                <button onclick="openMaps()" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition flex items-center">
+                                    <i class="fas fa-directions mr-2"></i>Petunjuk Arah
+                                </button>
+                                <button onclick="callWhatsApp()" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition flex items-center">
+                                    <i class="fab fa-whatsapp mr-2"></i>Chat Lokasi
                                 </button>
                             </div>
                         </div>
-                        <div class="flex items-center">
-                            <i class="fas fa-clock text-red-500 w-6"></i>
-                            <span class="ml-3" data-id="hours">Senin - Minggu: 10.00 - 22.00 WIB</span>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-whatsapp text-red-500 w-6"></i>
-                            <div class="ml-3">
-                                <span>WhatsApp: 085782089892</span>
+                        
+                        <!-- Customer Reviews -->
+                        <div class="bg-gray-800 p-6 rounded-2xl">
+                            <h5 class="text-xl font-bold text-white mb-4">⭐ Review Pelanggan</h5>
+                            <div class="space-y-4">
+                                <div class="border-l-4 border-yellow-500 pl-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                                        <span class="text-gray-300 ml-2 font-semibold">Budi Santoso</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm">"Sambel bakarnya enak banget! Pedasnya pas dan tempatnya nyaman. Recommended!"</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-yellow-500 pl-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                                        <span class="text-gray-300 ml-2 font-semibold">Sari Dewi</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm">"Lokasi strategis di Gunung Geulis. Makanannya fresh dan pelayanan ramah!"</p>
+                                </div>
+                                
+                                <div class="border-l-4 border-yellow-500 pl-4">
+                                    <div class="flex items-center mb-2">
+                                        <div class="text-yellow-400">⭐⭐⭐⭐⭐</div>
+                                        <span class="text-gray-300 ml-2 font-semibold">Ahmad Rizki</span>
+                                    </div>
+                                    <p class="text-gray-400 text-sm">"Harga terjangkau, rasa mantap! Jadi langganan keluarga nih."</p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-instagram text-red-500 w-6"></i>
-                            <a href="https://instagram.com/sambelbakarziizee" target="_blank" class="ml-3 hover:text-red-400 transition-colors">@sambelbakarziizee</a>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-facebook text-red-500 w-6"></i>
-                            <a href="https://facebook.com/sambelbakarziizee" target="_blank" class="ml-3 hover:text-red-400 transition-colors">Sambel Bakar Ziizee</a>
-                        </div>
-                        <div class="flex items-center">
-                            <i class="fab fa-google text-red-500 w-6"></i>
-                            <button onclick="openGoogleBusiness()" class="ml-3 hover:text-red-400 transition-colors text-left">
-                                Sambel Bakar Ziizee Bogor
-                                <br>
-                                <span class="text-sm text-gray-400">Lihat review & rating</span>
-                            </button>
                         </div>
                     </div>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-semibold mb-6" data-id="faq-title">FAQ</h3>
-                    <div class="space-y-4">
-                        <div>
-                            <h4 class="font-semibold text-red-400" data-id="faq-q1">Seberapa pedas sambel bakarnya?</h4>
-                            <p class="text-gray-300 mt-2" data-id="faq-a1">Kami menyediakan 3 level kepedasan: Mild, Medium, dan Extra Hot!</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-red-400" data-id="faq-q2">Apakah bisa pesan untuk acara?</h4>
-                            <p class="text-gray-300 mt-2" data-id="faq-a2">Tentu! Kami melayani catering untuk acara dengan minimal order 20 porsi.</p>
-                        </div>
-                        <div>
-                            <h4 class="font-semibold text-red-400" data-id="faq-q3">Berapa lama waktu pengantaran?</h4>
-                            <p class="text-gray-300 mt-2" data-id="faq-a3">Untuk area Sukaraja: 20-30 menit. Area Bogor lainnya: 35-50 menit.</p>
-                        </div>
+            </div>
+
+            <!-- Payment Methods -->
+            <div class="mt-16 text-center">
+                <h4 class="text-2xl font-bold text-white mb-8">Metode Pembayaran</h4>
+                <div class="flex justify-center space-x-8">
+                    <div class="bg-blue-600 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-mobile-alt mr-2"></i>GoPay
+                    </div>
+                    <div class="bg-blue-500 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-wallet mr-2"></i>DANA
+                    </div>
+                    <div class="bg-purple-600 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-credit-card mr-2"></i>OVO
+                    </div>
+                    <div class="bg-green-600 text-white px-4 py-2 rounded-lg">
+                        <i class="fas fa-money-bill mr-2"></i>Cash
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Shopping Cart Modal -->
-    <div id="cartModal" class="fixed inset-0 bg-black/80 z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-gray-800 rounded-lg max-w-md w-full max-h-[80vh] overflow-y-auto">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-2xl font-bold text-red-500" data-id="cart-title">Keranjang Belanja</h3>
-                        <button onclick="toggleCart()" class="text-gray-400 hover:text-white">
-                            <i class="fas fa-times text-xl"></i>
-                        </button>
-                    </div>
-                    <div id="cartItems" class="space-y-4 mb-6">
-                        <!-- Cart items will be populated here -->
-                    </div>
-                    <div class="border-t border-gray-600 pt-4">
-                        <div class="flex justify-between items-center mb-4">
-                            <span class="text-lg font-semibold" data-id="total-label">Total:</span>
-                            <span id="cartTotal" class="text-xl font-bold text-red-500">Rp 0</span>
-                        </div>
-                        <div class="space-y-3">
-                            <button onclick="checkoutWhatsApp()" class="w-full bg-green-600 hover:bg-green-700 py-3 rounded-lg font-semibold transition-all" data-id="checkout-whatsapp">
-                                <i class="fab fa-whatsapp mr-2"></i>Checkout via WhatsApp
-                            </button>
-                            <button onclick="showCheckoutForm()" class="w-full bg-red-600 hover:bg-red-700 py-3 rounded-lg font-semibold transition-all" data-id="checkout-form">
-                                <i class="fas fa-credit-card mr-2"></i>Checkout via Website
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Checkout Form Modal -->
-    <div id="checkoutModal" class="fixed inset-0 bg-black/80 z-50 hidden">
-        <div class="flex items-center justify-center min-h-screen p-4">
-            <div class="bg-gray-800 rounded-lg max-w-md w-full max-h-[80vh] overflow-y-auto">
-                <div class="p-6">
-                    <div class="flex justify-between items-center mb-6">
-                        <h3 class="text-2xl font-bold text-red-500" data-id="checkout-title">Form Pemesanan</h3>
-                        <button onclick="hideCheckoutForm()" class="text-gray-400 hover:text-white">
-                            <i class="fas fa-times text-xl"></i>
-                        </button>
-                    </div>
-                    <form id="checkoutForm" class="space-y-4">
-                        <div>
-                            <label class="block text-sm font-semibold mb-2" data-id="form-name">Nama Lengkap</label>
-                            <input type="text" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:border-red-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2" data-id="form-phone">Nomor Telepon</label>
-                            <input type="tel" required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:border-red-500 focus:outline-none">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2" data-id="form-address">Alamat Lengkap</label>
-                            <textarea required class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:border-red-500 focus:outline-none h-20"></textarea>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-semibold mb-2" data-id="form-notes">Catatan (Opsional)</label>
-                            <textarea class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2 focus:border-red-500 focus:outline-none h-16"></textarea>
-                        </div>
-                        <div class="bg-gray-700 p-4 rounded-lg">
-                            <div class="flex justify-between items-center mb-2">
-                                <span data-id="order-total">Total Pesanan:</span>
-                                <span id="orderTotal" class="font-bold text-red-500">Rp 0</span>
-                            </div>
-                            <p class="text-sm text-gray-400" data-id="order-info">
-                                <i class="fas fa-info-circle mr-1"></i>
-                                Pesanan akan diproses setelah konfirmasi pembayaran
-                            </p>
-                        </div>
-                        <button type="submit" class="w-full bg-red-600 hover:bg-red-700 py-3 rounded-lg font-semibold transition-all" data-id="submit-order">
-                            <i class="fas fa-paper-plane mr-2"></i>Kirim Pesanan
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Footer -->
-    <footer class="bg-black border-t border-red-600/30 py-8">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex items-center justify-center space-x-2 mb-4">
-                <span class="text-3xl">🌶️</span>
-                <h3 class="text-2xl font-bold text-red-500">Sambel Bakar Ziizee</h3>
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-3 mb-4">
+                        <div class="text-3xl">🌶️🔥</div>
+                        <h5 class="text-xl font-bold">Sambel Bakar Ziizee</h5>
+                    </div>
+                    <p class="text-gray-400 mb-4">Sensasi pedas yang bikin nagih dengan suasana café elegan</p>
+                    <div class="ssl-badge">
+                        <i class="fas fa-shield-alt mr-1"></i>
+                        Secure & Trusted
+                    </div>
+                </div>
+                
+                <div>
+                    <h6 class="font-bold mb-4">Menu Cepat</h6>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Beranda</a></li>
+                        <li><a href="#menu" class="text-gray-400 hover:text-white transition">Menu</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-white transition">Galeri</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Kontak</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h6 class="font-bold mb-4">Jam Operasional</h6>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Senin - Jumat: 10:00 - 22:00</li>
+                        <li>Sabtu - Minggu: 09:00 - 23:00</li>
+                        <li>Delivery: 24/7</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h6 class="font-bold mb-4">Ikuti Kami</h6>
+                    <div class="flex space-x-4">
+                        <button onclick="openInstagram()" class="text-pink-400 hover:text-pink-300 transition">
+                            <i class="fab fa-instagram text-2xl"></i>
+                        </button>
+                        <button onclick="openTikTok()" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-tiktok text-2xl"></i>
+                        </button>
+                        <button onclick="callWhatsApp()" class="text-green-400 hover:text-green-300 transition">
+                            <i class="fab fa-whatsapp text-2xl"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <p class="text-gray-400 mb-4" data-id="footer-tagline">Rasakan Pedasnya Cinta dalam Setiap Suapan!</p>
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
-                    <i class="fab fa-instagram text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
-                    <i class="fab fa-facebook text-2xl"></i>
-                </a>
-                <a href="#" class="text-gray-400 hover:text-red-400 transition-colors">
-                    <i class="fab fa-whatsapp text-2xl"></i>
-                </a>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 mb-2">&copy; 2025 Sambel Bakar Ziizee. All rights reserved.</p>
+                <div class="flex justify-center space-x-4 text-sm">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                </div>
             </div>
-            <p class="text-gray-500 text-sm">&copy; 2024 Sambel Bakar Ziizee. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Music Control -->
+    <div class="music-control">
+        <button id="musicToggle" onclick="toggleMusic()" class="text-white hover:text-red-400 transition">
+            <i class="fas fa-music text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Order Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-800">🛒 Keranjang Pesanan</h3>
+                <button onclick="closeOrderModal()" class="text-gray-500 hover:text-gray-700 text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            
+            <div id="cartItems" class="mb-6">
+                <p class="text-gray-500 text-center py-8">Keranjang masih kosong</p>
+            </div>
+            
+            <div class="border-t pt-4">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-bold text-gray-800">Total:</span>
+                    <span id="totalPrice" class="text-xl font-bold text-red-600">Rp 0</span>
+                </div>
+                
+                <div class="space-y-3">
+                    <input type="text" id="customerName" placeholder="Nama Lengkap" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <input type="tel" id="customerPhone" placeholder="Nomor WhatsApp" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                    <textarea id="customerAddress" placeholder="Alamat Lengkap" rows="3" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"></textarea>
+                    <select id="paymentMethod" class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500">
+                        <option value="">Pilih Metode Pembayaran</option>
+                        <option value="cash">💵 Cash (Bayar di Tempat)</option>
+                        <option value="gopay">🟢 GoPay - Aktif</option>
+                        <option value="dana">🔵 DANA - Aktif</option>
+                        <option value="ovo">🟣 OVO - Aktif</option>
+                    </select>
+                </div>
+                
+                <div class="flex gap-3 mt-6">
+                    <button onclick="submitOrder()" class="flex-1 bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition font-semibold">
+                        <i class="fas fa-paper-plane mr-2"></i>Kirim Pesanan
+                    </button>
+                    <button onclick="clearCart()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition">
+                        <i class="fas fa-trash mr-2"></i>Kosongkan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="modal">
+        <div class="modal-content">
+            <div class="text-center">
+                <div id="paymentIcon" class="text-6xl mb-4">💳</div>
+                <h3 class="text-2xl font-bold text-gray-800 mb-2">Pembayaran E-Wallet</h3>
+                <p id="paymentMethod" class="text-lg text-gray-600 mb-6">GoPay</p>
+                
+                <div class="bg-gray-100 p-6 rounded-lg mb-6">
+                    <div class="text-3xl font-bold text-red-600 mb-2" id="paymentAmount">Rp 0</div>
+                    <p class="text-gray-600">Total Pembayaran</p>
+                </div>
+                
+                <div class="space-y-4 mb-6">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-blue-800 mb-2">📱 Cara Pembayaran:</h4>
+                        <div id="paymentInstructions" class="text-sm text-blue-700 text-left">
+                            <p>1. Buka aplikasi GoPay</p>
+                            <p>2. Pilih "Bayar" atau "Transfer"</p>
+                            <p>3. Masukkan nomor: <strong>085782089892</strong></p>
+                            <p>4. Masukkan jumlah pembayaran</p>
+                            <p>5. Konfirmasi pembayaran</p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-green-50 border border-green-200 rounded-lg p-4">
+                        <h4 class="font-semibold text-green-800 mb-2">💰 Nomor E-Wallet:</h4>
+                        <div class="flex items-center justify-between bg-white p-3 rounded border">
+                            <span class="font-mono text-lg" id="walletNumber">085782089892</span>
+                            <button onclick="copyWalletNumber()" class="bg-green-500 text-white px-3 py-1 rounded text-sm hover:bg-green-600 transition">
+                                <i class="fas fa-copy mr-1"></i>Salin
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex gap-3">
+                    <button onclick="confirmPayment()" class="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition font-semibold">
+                        <i class="fas fa-check mr-2"></i>Sudah Bayar
+                    </button>
+                    <button onclick="closePaymentModal()" class="bg-gray-500 text-white px-6 py-3 rounded-lg hover:bg-gray-600 transition">
+                        <i class="fas fa-times mr-2"></i>Batal
+                    </button>
+                </div>
+                
+                <p class="text-xs text-gray-500 mt-4">
+                    Setelah pembayaran, pesanan akan diproses dan dikirim sesuai alamat yang diberikan
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Button -->
+    <div class="floating-whatsapp">
+        <button onclick="callWhatsApp()" class="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition">
+            <i class="fab fa-whatsapp text-2xl"></i>
+        </button>
+    </div>
+
     <script>
-        // Language translations
-        const translations = {
-            id: {
-                'nav-home': 'Beranda',
-                'nav-menu': 'Menu',
-                'nav-testimonials': 'Testimoni',
-                'nav-contact': 'Kontak',
-                'hero-title': 'Rasakan Pedasnya Cinta dalam Setiap Suapan!',
-                'hero-subtitle': 'Pesan sekarang, dijamin nagih!',
-                'btn-menu': 'Lihat Menu',
-                'btn-whatsapp': 'Pesan via WhatsApp',
-                'promo-title': '🎉 PROMO AKHIR PEKAN! 🎉',
-                'promo-desc': 'Diskon 20% untuk semua menu sambel bakar!',
-                'promo-timer': 'Berakhir dalam:',
-                'menu-title': 'Menu Pilihan',
-                'testimonials-title': 'Testimoni Pelanggan',
-                'testimonial-1': '"Sambel bakarnya juara banget! Pedasnya pas, nagih terus. Pelayanan juga cepat!"',
-                'testimonial-2': '"Harga terjangkau tapi rasa premium! Sambel bakar ayamnya recommended banget."',
-                'testimonial-3': '"Sudah langganan 6 bulan, selalu puas! Sambel bakar ikannya mantap."',
-                'contact-title': 'Kontak & Lokasi',
-                'contact-info': 'Informasi Kontak',
-                'address': 'Jl. Raya Sukaraja No. 123, Sukaraja, Bogor',
-                'hours': 'Senin - Minggu: 10.00 - 22.00 WIB',
-                'faq-title': 'FAQ',
-                'faq-q1': 'Seberapa pedas sambel bakarnya?',
-                'faq-a1': 'Kami menyediakan 3 level kepedasan: Mild, Medium, dan Extra Hot!',
-                'faq-q2': 'Apakah bisa pesan untuk acara?',
-                'faq-a2': 'Tentu! Kami melayani catering untuk acara dengan minimal order 20 porsi.',
-                'faq-q3': 'Berapa lama waktu pengantaran?',
-                'faq-a3': 'Untuk area Sukaraja: 20-30 menit. Area Bogor lainnya: 35-50 menit.',
-                'cart-title': 'Keranjang Belanja',
-                'total-label': 'Total:',
-                'checkout-whatsapp': 'Checkout via WhatsApp',
-                'checkout-form': 'Checkout via Website',
-                'checkout-title': 'Form Pemesanan',
-                'form-name': 'Nama Lengkap',
-                'form-phone': 'Nomor Telepon',
-                'form-address': 'Alamat Lengkap',
-                'form-notes': 'Catatan (Opsional)',
-                'order-total': 'Total Pesanan:',
-                'order-info': 'Pesanan akan diproses setelah konfirmasi pembayaran',
-                'submit-order': 'Kirim Pesanan',
-                'footer-tagline': 'Rasakan Pedasnya Cinta dalam Setiap Suapan!',
-                'filter-all': 'Semua Menu',
-                'filter-chicken': 'Ayam',
-                'filter-fish': 'Ikan',
-                'filter-duck': 'Bebek',
-                'filter-seafood': 'Seafood',
-                'filter-vegetarian': 'Vegetarian',
-                'filter-package': 'Paket'
-            },
-            en: {
-                'nav-home': 'Home',
-                'nav-menu': 'Menu',
-                'nav-testimonials': 'Testimonials',
-                'nav-contact': 'Contact',
-                'hero-title': 'Taste the Spicy Love in Every Bite!',
-                'hero-subtitle': 'Order now, guaranteed addictive!',
-                'btn-menu': 'View Menu',
-                'btn-whatsapp': 'Order via WhatsApp',
-                'promo-title': '🎉 WEEKEND PROMO! 🎉',
-                'promo-desc': '20% discount for all grilled chili menu!',
-                'promo-timer': 'Ends in:',
-                'menu-title': 'Featured Menu',
-                'testimonials-title': 'Customer Testimonials',
-                'testimonial-1': '"The grilled chili is amazing! Perfect spiciness, always craving for more. Fast service too!"',
-                'testimonial-2': '"Affordable price but premium taste! The grilled chili chicken is highly recommended."',
-                'testimonial-3': '"Been a regular for 6 months, always satisfied! The grilled chili fish is awesome."',
-                'contact-title': 'Contact & Location',
-                'contact-info': 'Contact Information',
-                'address': 'Jl. Raya Sukaraja No. 123, Sukaraja, Bogor',
-                'hours': 'Monday - Sunday: 10.00 - 22.00 WIB',
-                'faq-title': 'FAQ',
-                'faq-q1': 'How spicy is the grilled chili?',
-                'faq-a1': 'We provide 3 spice levels: Mild, Medium, and Extra Hot!',
-                'faq-q2': 'Can I order for events?',
-                'faq-a2': 'Sure! We provide catering services with minimum order of 20 portions.',
-                'faq-q3': 'How long is the delivery time?',
-                'faq-a3': 'Sukaraja area: 20-30 minutes. Other Bogor areas: 35-50 minutes.',
-                'cart-title': 'Shopping Cart',
-                'total-label': 'Total:',
-                'checkout-whatsapp': 'Checkout via WhatsApp',
-                'checkout-form': 'Checkout via Website',
-                'checkout-title': 'Order Form',
-                'form-name': 'Full Name',
-                'form-phone': 'Phone Number',
-                'form-address': 'Complete Address',
-                'form-notes': 'Notes (Optional)',
-                'order-total': 'Order Total:',
-                'order-info': 'Orders will be processed after payment confirmation',
-                'submit-order': 'Submit Order',
-                'footer-tagline': 'Taste the Spicy Love in Every Bite!',
-                'filter-all': 'All Menu',
-                'filter-chicken': 'Chicken',
-                'filter-fish': 'Fish',
-                'filter-duck': 'Duck',
-                'filter-seafood': 'Seafood',
-                'filter-vegetarian': 'Vegetarian',
-                'filter-package': 'Package'
-            }
-        };
-
-        // Menu data
-        const menuItems = {
-            id: [
-                {
-                    id: 1,
-                    name: 'Ayam Bakar Sambel Terasi',
-                    description: 'Ayam kampung bakar bumbu kecap dengan sambel terasi pedas, nasi putih, lalapan timun tomat',
-                    price: 26000,
-                    image: '🍗',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Ayam'
-                },
-                {
-                    id: 2,
-                    name: 'Ikan Gurame Bakar Sambel',
-                    description: 'Gurame segar 500gr dibakar bumbu kuning, sambel bawang pedas, nasi hangat, lalapan',
-                    price: 45000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Ikan'
-                },
-                {
-                    id: 3,
-                    name: 'Bebek Bakar Sambel Ijo',
-                    description: 'Bebek muda bakar bumbu rujak dengan sambel ijo pedas khas Jawa, nasi, lalapan',
-                    price: 38000,
-                    image: '🦆',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Bebek'
-                },
-                {
-                    id: 4,
-                    name: 'Lele Bakar Sambel Kecap',
-                    description: 'Lele segar dibakar bumbu kecap manis, sambel rawit merah, nasi putih, lalapan',
-                    price: 20000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Ikan'
-                },
-                {
-                    id: 5,
-                    name: 'Udang Bakar Sambel Matah',
-                    description: 'Udang windu jumbo bakar mentega dengan sambel matah khas Bali, nasi, kerupuk',
-                    price: 55000,
-                    image: '🦐',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 6,
-                    name: 'Cumi Bakar Sambel Dabu',
-                    description: 'Cumi segar bakar bumbu rica-rica dengan sambel dabu-dabu Manado, nasi, lalapan',
-                    price: 35000,
-                    image: '🦑',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 7,
-                    name: 'Nila Bakar Sambel Tomat',
-                    description: 'Ikan nila segar dibakar bumbu kuning, sambel tomat segar pedas, nasi, lalapan',
-                    price: 28000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Ikan'
-                },
-                {
-                    id: 8,
-                    name: 'Kepiting Bakar Sambel Padang',
-                    description: 'Kepiting soka bakar bumbu padang dengan sambel lado mudo, nasi, kerupuk',
-                    price: 65000,
-                    image: '🦀',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 9,
-                    name: 'Tahu Tempe Bakar Sambel',
-                    description: 'Tahu putih dan tempe bakar bumbu kecap dengan sambel bawang, nasi, lalapan',
-                    price: 15000,
-                    image: '🥘',
-                    spiceLevel: '🌶️',
-                    category: 'Vegetarian'
-                },
-                {
-                    id: 10,
-                    name: 'Paket Keluarga Lengkap',
-                    description: 'Ayam bakar, gurame, udang, sambel 3 macam, nasi 4 porsi, lalapan, kerupuk',
-                    price: 150000,
-                    image: '🍽️',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Paket'
-                },
-                {
-                    id: 11,
-                    name: 'Patin Bakar Sambel Hijau',
-                    description: 'Ikan patin segar bakar bumbu kuning dengan sambel hijau pedas, nasi, lalapan',
-                    price: 32000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Ikan'
-                },
-                {
-                    id: 12,
-                    name: 'Ayam Bakar',
-                    description: 'Ayam kampung bakar bumbu base genep Bali dengan sambel matah, nasi, lalapan',
-                    price: 30000,
-                    image: '🍗',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Ayam'
-                }
-            ],
-            en: [
-                {
-                    id: 1,
-                    name: 'Grilled Chicken with Shrimp Paste Chili',
-                    description: 'Free-range chicken grilled with soy sauce seasoning, spicy shrimp paste chili, white rice, cucumber tomato salad',
-                    price: 25000,
-                    image: '🍗',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Chicken'
-                },
-                {
-                    id: 2,
-                    name: 'Grilled Gourami Fish with Chili',
-                    description: 'Fresh 500gr gourami grilled with turmeric seasoning, spicy onion chili, warm rice, fresh vegetables',
-                    price: 45000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Fish'
-                },
-                {
-                    id: 3,
-                    name: 'Grilled Duck with Green Chili',
-                    description: 'Young duck grilled with rujak seasoning and spicy Javanese green chili, rice, vegetables',
-                    price: 38000,
-                    image: '🦆',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Duck'
-                },
-                {
-                    id: 4,
-                    name: 'Grilled Catfish with Sweet Soy Chili',
-                    description: 'Fresh catfish grilled with sweet soy seasoning, red chili pepper, white rice, vegetables',
-                    price: 20000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Fish'
-                },
-                {
-                    id: 5,
-                    name: 'Grilled Prawns with Matah Chili',
-                    description: 'Jumbo tiger prawns grilled with butter and Balinese matah chili, rice, crackers',
-                    price: 55000,
-                    image: '🦐',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 6,
-                    name: 'Grilled Squid with Dabu Chili',
-                    description: 'Fresh squid grilled with rica-rica seasoning and Manado dabu-dabu chili, rice, vegetables',
-                    price: 35000,
-                    image: '🦑',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 7,
-                    name: 'Grilled Tilapia with Tomato Chili',
-                    description: 'Fresh tilapia grilled with turmeric seasoning, spicy fresh tomato chili, rice, vegetables',
-                    price: 28000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Fish'
-                },
-                {
-                    id: 8,
-                    name: 'Grilled Crab with Padang Chili',
-                    description: 'Soft shell crab grilled with Padang seasoning and lado mudo chili, rice, crackers',
-                    price: 65000,
-                    image: '🦀',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Seafood'
-                },
-                {
-                    id: 9,
-                    name: 'Grilled Tofu Tempeh with Chili',
-                    description: 'White tofu and tempeh grilled with soy seasoning and onion chili, rice, vegetables',
-                    price: 15000,
-                    image: '🥘',
-                    spiceLevel: '🌶️',
-                    category: 'Vegetarian'
-                },
-                {
-                    id: 10,
-                    name: 'Complete Family Package',
-                    description: 'Grilled chicken, gourami, prawns, 3 types of chili, 4 portions rice, vegetables, crackers',
-                    price: 150000,
-                    image: '🍽️',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Package'
-                },
-                {
-                    id: 11,
-                    name: 'Grilled Patin Fish with Green Chili',
-                    description: 'Fresh patin fish grilled with turmeric seasoning and spicy green chili, rice, vegetables',
-                    price: 32000,
-                    image: '🐟',
-                    spiceLevel: '🌶️🌶️🌶️',
-                    category: 'Fish'
-                },
-                {
-                    id: 12,
-                    name: 'Grilled Chicken Balinese Style',
-                    description: 'Free-range chicken grilled with Balinese base genep seasoning and matah chili, rice, vegetables',
-                    price: 30000,
-                    image: '🍗',
-                    spiceLevel: '🌶️🌶️',
-                    category: 'Chicken'
-                }
-            ]
-        };
-
-        // Global variables
-        let currentLang = 'id';
+        // Cart system
         let cart = [];
-        let currentFilter = 'all';
+        let isPlaying = false;
+        let audioContext;
+        let oscillator;
 
-        // Initialize
-        document.addEventListener('DOMContentLoaded', function() {
-            renderMenu();
-            startCountdown();
+        // Background music using Web Audio API (royalty-free)
+        function createBackgroundMusic() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            
+            if (oscillator) {
+                oscillator.stop();
+            }
+            
+            oscillator = audioContext.createOscillator();
+            const gainNode = audioContext.createGain();
+            
+            oscillator.connect(gainNode);
+            gainNode.connect(audioContext.destination);
+            
+            // Create a simple, pleasant melody
+            oscillator.type = 'sine';
+            oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+            gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+            
+            // Simple melody pattern
+            const notes = [440, 494, 523, 587, 659, 698, 784, 880];
+            let noteIndex = 0;
+            
+            const playNote = () => {
+                if (isPlaying) {
+                    oscillator.frequency.setValueAtTime(notes[noteIndex], audioContext.currentTime);
+                    noteIndex = (noteIndex + 1) % notes.length;
+                    setTimeout(playNote, 800);
+                }
+            };
+            
+            oscillator.start();
+            playNote();
+        }
+
+        function toggleMusic() {
+            const musicToggle = document.getElementById('musicToggle');
+            
+            if (!isPlaying) {
+                isPlaying = true;
+                createBackgroundMusic();
+                musicToggle.innerHTML = '<i class="fas fa-pause text-xl"></i>';
+                musicToggle.classList.add('text-red-400');
+            } else {
+                isPlaying = false;
+                if (oscillator) {
+                    oscillator.stop();
+                }
+                musicToggle.innerHTML = '<i class="fas fa-music text-xl"></i>';
+                musicToggle.classList.remove('text-red-400');
+            }
+        }
+
+        // Cart functions
+        function addToCart(itemName, price) {
+            const existingItem = cart.find(item => item.name === itemName);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    name: itemName,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
             updateCartDisplay();
+            showNotification(`${itemName} ditambahkan ke keranjang!`);
+        }
+
+        function removeFromCart(itemName) {
+            cart = cart.filter(item => item.name !== itemName);
+            updateCartDisplay();
+        }
+
+        function updateQuantity(itemName, change) {
+            const item = cart.find(item => item.name === itemName);
+            if (item) {
+                item.quantity += change;
+                if (item.quantity <= 0) {
+                    removeFromCart(itemName);
+                } else {
+                    updateCartDisplay();
+                }
+            }
+        }
+
+        function updateCartDisplay() {
+            const cartItems = document.getElementById('cartItems');
+            const totalPrice = document.getElementById('totalPrice');
+            
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<p class="text-gray-500 text-center py-8">Keranjang masih kosong</p>';
+                totalPrice.textContent = 'Rp 0';
+                return;
+            }
+            
+            let total = 0;
+            let html = '';
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+                
+                html += `
+                    <div class="cart-item">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">${item.name}</h4>
+                            <p class="text-sm text-gray-600">Rp ${item.price.toLocaleString()} x ${item.quantity}</p>
+                        </div>
+                        <div class="quantity-control">
+                            <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)">-</button>
+                            <span class="font-semibold">${item.quantity}</span>
+                            <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)">+</button>
+                            <button onclick="removeFromCart('${item.name}')" class="ml-2 text-red-500 hover:text-red-700">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartItems.innerHTML = html;
+            totalPrice.textContent = `Rp ${total.toLocaleString()}`;
+        }
+
+        function openOrderModal() {
+            document.getElementById('orderModal').style.display = 'block';
+            updateCartDisplay();
+        }
+
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartDisplay();
+            showNotification('Keranjang dikosongkan!');
+        }
+
+        function submitOrder() {
+            const name = document.getElementById('customerName').value;
+            const phone = document.getElementById('customerPhone').value;
+            const address = document.getElementById('customerAddress').value;
+            const payment = document.getElementById('paymentMethod').value;
+            
+            if (!name || !phone || !address || !payment || cart.length === 0) {
+                alert('Mohon lengkapi semua data dan pastikan keranjang tidak kosong!');
+                return;
+            }
+            
+            let total = 0;
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                total += itemTotal;
+            });
+            
+            // Process e-wallet payments
+            if (payment === 'gopay' || payment === 'dana' || payment === 'ovo') {
+                processEwalletPayment(payment, total, name, phone, address);
+                return;
+            }
+            
+            // For cash payment, proceed with WhatsApp order
+            let orderText = `🍽️ *PESANAN BARU SAMBEL BAKAR ZIIZEE*\n\n`;
+            orderText += `👤 *Nama:* ${name}\n`;
+            orderText += `📱 *WhatsApp:* ${phone}\n`;
+            orderText += `📍 *Alamat:* ${address}\n`;
+            orderText += `💳 *Pembayaran:* ${getPaymentMethodName(payment)}\n\n`;
+            orderText += `🛒 *Detail Pesanan:*\n`;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                orderText += `• ${item.name} x${item.quantity} = Rp ${itemTotal.toLocaleString()}\n`;
+            });
+            
+            orderText += `\n💰 *Total: Rp ${total.toLocaleString()}*\n\n`;
+            orderText += `Mohon konfirmasi pesanan ini. Terima kasih! 🙏`;
+            
+            const whatsappUrl = `https://wa.me/6285782089892?text=${encodeURIComponent(orderText)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Clear form and cart after successful order
+            clearOrderForm();
+            showNotification('Pesanan berhasil dikirim via WhatsApp!');
+        }
+
+        function processEwalletPayment(paymentMethod, total, name, phone, address) {
+            // Show payment processing modal
+            showPaymentModal(paymentMethod, total, name, phone, address);
+        }
+
+        function getPaymentMethodName(method) {
+            const methods = {
+                'cash': '💵 Cash (Bayar di Tempat)',
+                'gopay': '🟢 GoPay',
+                'dana': '🔵 DANA',
+                'ovo': '🟣 OVO'
+            };
+            return methods[method] || method;
+        }
+
+        function clearOrderForm() {
+            document.getElementById('customerName').value = '';
+            document.getElementById('customerPhone').value = '';
+            document.getElementById('customerAddress').value = '';
+            document.getElementById('paymentMethod').value = '';
+            clearCart();
+            closeOrderModal();
+        }
+
+        function showNotification(message) {
+            const notification = document.createElement('div');
+            notification.className = 'fixed top-20 right-4 bg-green-500 text-white px-6 py-3 rounded-lg shadow-lg z-50 transform translate-x-full transition-transform duration-300';
+            notification.textContent = message;
+            
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.classList.remove('translate-x-full');
+            }, 100);
+            
+            setTimeout(() => {
+                notification.classList.add('translate-x-full');
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Update all order buttons to use addToCart
+        function updateAllOrderButtons() {
+            const orderButtons = document.querySelectorAll('button[onclick*="orderItem"]');
+            orderButtons.forEach(button => {
+                const onclick = button.getAttribute('onclick');
+                const newOnclick = onclick.replace('orderItem', 'addToCart');
+                button.setAttribute('onclick', newOnclick);
+                button.innerHTML = '<i class="fas fa-cart-plus mr-1"></i>Tambah ke Keranjang';
+            });
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // WhatsApp functions
+        function callWhatsApp() {
+            window.open('https://wa.me/6285782089892?text=Halo%20Sambel%20Bakar%20Ziizee!%20Saya%20ingin%20memesan%20makanan.', '_blank');
+        }
+
+        function orderWhatsApp() {
+            window.open('https://wa.me/6285782089892?text=Halo!%20Saya%20ingin%20melihat%20menu%20dan%20memesan%20makanan%20di%20Sambel%20Bakar%20Ziizee.', '_blank');
+        }
+
+        function orderItem(itemName, price) {
+            const message = `Halo Sambel Bakar Ziizee! Saya ingin memesan:\n\n${itemName}\nHarga: Rp ${price.toLocaleString()}\n\nMohon konfirmasi ketersediaan. Terima kasih!`;
+            window.open(`https://wa.me/6285782089892?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Social media functions
+        function openInstagram() {
+            window.open('https://instagram.com/sambelbakarziizee', '_blank');
+        }
+
+        function openTikTok() {
+            window.open('https://tiktok.com/@sambelbakarziizee', '_blank');
+        }
+
+        function openMaps() {
+            window.open('https://maps.google.com/?q=Sambel+Bakar+Ziizee+Gunung+Geulis+Sukaraja+Kabupaten+Bogor', '_blank');
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar-scroll');
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-black');
+                navbar.classList.remove('bg-opacity-90');
+            } else {
+                navbar.classList.remove('bg-black');
+                navbar.classList.add('bg-opacity-90');
+            }
         });
 
-        // Language toggle
-        function toggleLanguage() {
-            currentLang = currentLang === 'id' ? 'en' : 'id';
-            document.documentElement.lang = currentLang;
-            
-            // Update language toggle button
-            document.getElementById('langToggle').textContent = currentLang === 'id' ? '🇬🇧 EN' : '🇮🇩 ID';
-            
-            // Update all translatable elements
-            Object.keys(translations[currentLang]).forEach(key => {
-                const element = document.querySelector(`[data-id="${key}"]`);
-                if (element) {
-                    element.textContent = translations[currentLang][key];
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             });
-            
-            // Re-render menu with new language
-            renderMenu();
-        }
+        });
 
-        // Filter menu by category
-        function filterMenu(category) {
-            currentFilter = category;
+        // Menu category filter
+        function showCategory(category) {
+            const menuItems = document.querySelectorAll('[data-category]');
+            const categoryBtns = document.querySelectorAll('.category-btn');
             
-            // Update filter button styles
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                btn.classList.remove('active', 'bg-red-600', 'hover:bg-red-700');
-                btn.classList.add('bg-gray-700', 'hover:bg-gray-600');
+            // Reset button styles
+            categoryBtns.forEach(btn => {
+                btn.classList.remove('bg-red-600');
+                btn.classList.add('bg-gray-700');
             });
             
-            event.target.classList.remove('bg-gray-700', 'hover:bg-gray-600');
-            event.target.classList.add('active', 'bg-red-600', 'hover:bg-red-700');
+            // Highlight active button
+            event.target.classList.remove('bg-gray-700');
+            event.target.classList.add('bg-red-600');
             
-            renderMenu();
+            // Show/hide menu items
+            menuItems.forEach(item => {
+                if (category === 'all' || item.dataset.category === category) {
+                    item.style.display = 'block';
+                    item.style.animation = 'fadeIn 0.5s ease-in-out';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
         }
 
-        // Render menu
-        function renderMenu() {
-            const menuGrid = document.getElementById('menuGrid');
-            const items = menuItems[currentLang];
+        // Initialize
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.5s ease-in-out';
+            setTimeout(() => {
+                document.body.style.opacity = '1';
+                updateAllOrderButtons();
+            }, 100);
+        });
+
+        function showPaymentModal(paymentMethod, total, name, phone, address) {
+            const modal = document.getElementById('paymentModal');
+            const paymentIcon = document.getElementById('paymentIcon');
+            const paymentMethodText = document.getElementById('paymentMethod');
+            const paymentAmount = document.getElementById('paymentAmount');
+            const paymentInstructions = document.getElementById('paymentInstructions');
             
-            // Filter items based on current filter
-            const filteredItems = currentFilter === 'all' 
-                ? items 
-                : items.filter(item => item.category === currentFilter);
+            // Store order data for later use
+            window.currentOrder = { paymentMethod, total, name, phone, address };
             
-            menuGrid.innerHTML = filteredItems.map(item => `
-                <div class="bg-gray-800 rounded-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 fade-in">
-                    <div class="text-6xl text-center py-8 bg-gradient-to-br from-red-600 to-orange-600">
-                        ${item.image}
-                    </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-2">commit message :
-                            <h3 class="text-xl font-bold text-red-400">${item.name}<"add sambel bakar ziizee website"
+            // Set payment method specific data
+            const paymentData = {
+                gopay: {
+                    icon: '🟢',
+                    name: 'GoPay',
+                    instructions: [
+                        '1. Buka aplikasi Gojek/GoPay',
+                        '2. Pilih "Bayar" atau "Transfer"',
+                        '3. Masukkan nomor: <strong>085782089892</strong>',
+                        '4. Masukkan jumlah: <strong>Rp ' + total.toLocaleString() + '</strong>',
+                        '5. Konfirmasi pembayaran',
+                        '6. Screenshot bukti transfer'
+                    ]
+                },
+                dana: {
+                    icon: '🔵',
+                    name: 'DANA',
+                    instructions: [
+                        '1. Buka aplikasi DANA',
+                        '2. Pilih "Kirim" atau "Transfer"',
+                        '3. Masukkan nomor: <strong>085782089892</strong>',
+                        '4. Masukkan jumlah: <strong>Rp ' + total.toLocaleString() + '</strong>',
+                        '5. Konfirmasi pembayaran',
+                        '6. Screenshot bukti transfer'
+                    ]
+                },
+                ovo: {
+                    icon: '🟣',
+                    name: 'OVO',
+                    instructions: [
+                        '1. Buka aplikasi OVO',
+                        '2. Pilih "Transfer" atau "Kirim"',
+                        '3. Masukkan nomor: <strong>085782089892</strong>',
+                        '4. Masukkan jumlah: <strong>Rp ' + total.toLocaleString() + '</strong>',
+                        '5. Konfirmasi pembayaran',
+                        '6. Screenshot bukti transfer'
+                    ]
+                }
+            };
+            
+            const data = paymentData[paymentMethod];
+            paymentIcon.textContent = data.icon;
+            paymentMethodText.textContent = data.name;
+            paymentAmount.textContent = 'Rp ' + total.toLocaleString();
+            
+            paymentInstructions.innerHTML = data.instructions.map(instruction => 
+                '<p>' + instruction + '</p>'
+            ).join('');
+            
+            closeOrderModal();
+            modal.style.display = 'block';
+        }
+
+        function closePaymentModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+
+        function copyWalletNumber() {
+            const walletNumber = document.getElementById('walletNumber').textContent;
+            navigator.clipboard.writeText(walletNumber).then(() => {
+                showNotification('Nomor e-wallet berhasil disalin!');
+            }).catch(() => {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = walletNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showNotification('Nomor e-wallet berhasil disalin!');
+            });
+        }
+
+        function confirmPayment() {
+            if (!window.currentOrder) return;
+            
+            const { paymentMethod, total, name, phone, address } = window.currentOrder;
+            
+            // Create WhatsApp message with payment confirmation
+            let orderText = `🍽️ *PESANAN BARU SAMBEL BAKAR ZIIZEE*\n`;
+            orderText += `💳 *PEMBAYARAN E-WALLET DIKONFIRMASI*\n\n`;
+            orderText += `👤 *Nama:* ${name}\n`;
+            orderText += `📱 *WhatsApp:* ${phone}\n`;
+            orderText += `📍 *Alamat:* ${address}\n`;
+            orderText += `💰 *Pembayaran:* ${getPaymentMethodName(paymentMethod)}\n`;
+            orderText += `💵 *Total Dibayar:* Rp ${total.toLocaleString()}\n\n`;
+            orderText += `🛒 *Detail Pesanan:*\n`;
+            
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                orderText += `• ${item.name} x${item.quantity} = Rp ${itemTotal.toLocaleString()}\n`;
+            });
+            
+            orderText += `\n✅ *Status:* Pembayaran dikonfirmasi pelanggan\n`;
+            orderText += `📝 *Catatan:* Mohon verifikasi pembayaran dan proses pesanan\n\n`;
+            orderText += `Terima kasih! 🙏`;
+            
+            const whatsappUrl = `https://wa.me/6285782089892?text=${encodeURIComponent(orderText)}`;
+            window.open(whatsappUrl, '_blank');
+            
+            // Clear everything
+            clearOrderForm();
+            closePaymentModal();
+            window.currentOrder = null;
+            
+            showNotification('Konfirmasi pembayaran berhasil dikirim! Pesanan akan segera diproses.');
+        }
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            const orderModal = document.getElementById('orderModal');
+            const paymentModal = document.getElementById('paymentModal');
+            
+            if (event.target === orderModal) {
+                closeOrderModal();
+            }
+            if (event.target === paymentModal) {
+                closePaymentModal();
+            }
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9669db7331d0ff8f',t:'MTc1Mzc2MzE3Ny4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
